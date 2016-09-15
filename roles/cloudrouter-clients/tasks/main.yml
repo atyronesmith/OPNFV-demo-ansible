@@ -92,6 +92,7 @@
 - name: Let everyone know we are done
   file: path=/home/nfv/CONFIGURED state=touch owner=nfv group=nfv mode=0775
   when: nf.stat.isdir is defined and nf.stat.isdir
+  become: true
 
 #- name: Let everyone know we are done
 #  template: src=CONFIGURED.j2 dest=/home/opnfv/CONFIGURED owner=opnfv group=opnfv mode="u=rw,g=r,o=r"
